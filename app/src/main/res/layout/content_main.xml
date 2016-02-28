@@ -13,13 +13,34 @@
     tools:showIn="@layout/activity_main">
 
     <TextView
+        android:id="@+id/text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!! and the rest!!" />
+        android:text="Please enter payment:"
+        android:layout_alignParentTop="true" />
     <Button
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="calculate"/>
+        android:text="calculate"
+        android:layout_below="@+id/payment"
+        android:layout_centerHorizontal="true"
+        android:onClick="calculateTip"/>
+
+    <EditText
+        android:id="@+id/payment"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:hint="payment"
+        android:inputType="number"
+        android:layout_below="@+id/text"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tip"
+        android:text="Tip:"
+        android:layout_below="@+id/button"/>
 
 </RelativeLayout>

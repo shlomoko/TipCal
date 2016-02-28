@@ -8,6 +8,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.EditText;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -28,6 +30,15 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    public void calculateTip(View view){
+        TextView editText = (TextView) findViewById(R.id.text);
+        TextView tip = (TextView) findViewById(R.id.tip);
+        EditText payment = (EditText) findViewById(R.id.payment);
+        editText.setText("Your tip should be:");
+        String val = payment.getText().toString();
+        double newVal = Integer.parseInt(val)*0.12;
+        tip.setText(String.valueOf(newVal));
+    }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
