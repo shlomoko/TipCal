@@ -8,6 +8,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -34,10 +35,14 @@ public class MainActivity extends AppCompatActivity {
         TextView editText = (TextView) findViewById(R.id.text);
         TextView tip = (TextView) findViewById(R.id.tip);
         EditText payment = (EditText) findViewById(R.id.payment);
+        CheckBox box = (CheckBox) findViewById((R.id.checkBox));
         editText.setText("Your tip should be:");
         String val = payment.getText().toString();
-        double newVal = Integer.parseInt(val)*0.12;
-        tip.setText(String.valueOf(newVal));
+        double newVal = Integer.parseInt(val) * 0.12;
+        if(box.isChecked()) {
+            newVal = Math.ceil(newVal);
+        }
+            tip.setText("Tip: $" + String.format("%.2f", newVal));
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
