@@ -36,14 +36,18 @@ public class MainActivity extends AppCompatActivity {
         TextView tip = (TextView) findViewById(R.id.tip);
         EditText payment = (EditText) findViewById(R.id.payment);
         CheckBox box = (CheckBox) findViewById((R.id.checkBox));
-        editText.setText("Your tip should be:");
+        //editText.setText("Your tip should be:");
         String val = payment.getText().toString();
-        double newVal = Integer.parseInt(val) * 0.12;
-        if(box.isChecked()) {
-            newVal = Math.ceil(newVal);
-            tip.setText("Tip: $" + String.format("%.0f", newVal));
-        } else {
-            tip.setText("Tip: $" + String.format("%.2f", newVal));
+        try{
+            double newVal = Double.parseDouble(val) * 0.12;
+            if (box.isChecked()) {
+                newVal = Math.ceil(newVal);
+                tip.setText("Tip: $" + String.format("%.0f", newVal));
+            } else {
+                tip.setText("Tip: $" + String.format("%.2f", newVal));
+            }
+        } catch (Exception err){
+            tip.setText("please enter valid number");
         }
     }
     @Override

@@ -16,7 +16,7 @@
         android:id="@+id/text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Please enter payment:"
+        android:text="Bill Amount:"
         android:layout_alignParentTop="true" />
     <Button
         android:id="@+id/button"
@@ -33,7 +33,7 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:hint="payment"
-        android:inputType="number"
+        android:inputType="numberDecimal"
         android:layout_below="@+id/text"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"/>
