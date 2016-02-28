@@ -41,8 +41,10 @@ public class MainActivity extends AppCompatActivity {
         double newVal = Integer.parseInt(val) * 0.12;
         if(box.isChecked()) {
             newVal = Math.ceil(newVal);
-        }
+            tip.setText("Tip: $" + String.format("%.0f", newVal));
+        } else {
             tip.setText("Tip: $" + String.format("%.2f", newVal));
+        }
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
